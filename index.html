@@ -3,60 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreelancePro - Professional Web Development & Data Science Solutions</title>
+    <title>TechNova Solutions | Complete Software Services & AI Solutions</title>
+    <meta name="description" content="Leading software development company offering AI solutions, web development, mobile apps, cloud services, and digital transformation.">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Animation -->
-    <div class="loading">
-        <div class="loading-spinner"></div>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loading-animation"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">FreelancePro</div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">TechNova Solutions</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="cta-button">Contact</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="#contact" class="nav-cta">Get Started</a>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Transform Your Digital Presence</h1>
-                <p>Leading the way in innovative web development and data science solutions. We help businesses thrive in the digital age.</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="cta-button">Explore Services</a>
-                    <a href="#contact" class="cta-button">Get Started</a>
-                </div>
-                <div class="company-stats">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Projects Completed</span>
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right">
+                <h1>Next-Gen Software Solutions for Tomorrow's World</h1>
+                <p class="subtitle">We transform businesses through cutting-edge AI, cloud computing, and innovative software development. Your digital transformation partner for the future.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="500">0</span>
+                        <span class="stat-label">Projects Delivered</span>
                     </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                        <span class="stat-number">200+</span>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="200">0</span>
                         <span class="stat-label">Happy Clients</span>
                     </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Years Experience</span>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="99">0</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">Explore Services</a>
+                    <a href="#portfolio" class="btn-secondary">View Portfolio</a>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="floating-cards">
+                    <div class="floating-card">
+                        <i class="fas fa-brain" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <h4>AI & Machine Learning</h4>
+                        <p>Intelligent solutions powered by advanced algorithms</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-cloud" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                        <h4>Cloud Architecture</h4>
+                        <p>Scalable infrastructure for modern applications</p>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h4>Mobile Development</h4>
+                        <p>Cross-platform apps for iOS and Android</p>
                     </div>
                 </div>
             </div>
@@ -64,167 +85,260 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up">
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-subtitle">Our Expertise</div>
+                <h2 class="section-title">Complete Software Solutions</h2>
+                <p class="section-description">From AI-powered applications to enterprise-grade systems, we deliver comprehensive software services that drive innovation and accelerate growth.</p>
+            </div>
+
+            <div class="services-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h3>Website Development</h3>
-                    <ul>
-                        <li>Custom Website Design</li>
-                        <li>WordPress Development</li>
-                        <li>E-commerce Solutions</li>
-                        <li>Website Maintenance</li>
-                        <li>SEO Optimization</li>
-                    </ul>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data Science</h3>
-                    <ul>
-                        <li>Data Analysis</li>
-                        <li>Machine Learning Models</li>
-                        <li>Business Intelligence</li>
-                        <li>Data Visualization</li>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Harness the power of artificial intelligence to automate processes, gain insights, and create intelligent solutions that adapt and learn.</p>
+                    <ul class="service-features">
+                        <li>Custom AI Model Development</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision Solutions</li>
                         <li>Predictive Analytics</li>
+                        <li>AI Integration Services</li>
                     </ul>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Create stunning, responsive websites and web applications that deliver exceptional user experiences across all devices.</p>
+                    <ul class="service-features">
+                        <li>Custom Web Applications</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Progressive Web Apps</li>
+                        <li>API Development</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile Development</h3>
-                    <ul>
-                        <li>iOS Development</li>
-                        <li>Android Development</li>
-                        <li>Cross-platform Apps</li>
-                        <li>App Maintenance</li>
-                        <li>UI/UX Design</li>
+                    <p>Build native and cross-platform mobile applications that engage users and drive business growth on iOS and Android.</p>
+                    <ul class="service-features">
+                        <li>Native iOS & Android Apps</li>
+                        <li>Cross-platform Development</li>
+                        <li>Mobile UI/UX Design</li>
+                        <li>App Store Optimization</li>
+                        <li>Mobile Backend Services</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2>Our Pricing Plans</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card" data-aos="fade-up">
-                    <div class="pricing-header">
-                        <h3>Basic</h3>
-                        <div class="price">
-                            <span class="currency">₹</span>
-                            <span class="amount">4,999</span>
-                            <span class="period">/project</span>
-                        </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Basic Website Design</li>
-                        <li><i class="fas fa-check"></i> 5 Pages</li>
-                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
-                        <li><i class="fas fa-check"></i> Contact Form</li>
-                        <li><i class="fas fa-check"></i> Basic SEO</li>
+                    <h3>Cloud Solutions</h3>
+                    <p>Leverage cloud computing to scale your infrastructure, reduce costs, and improve reliability with modern cloud architectures.</p>
+                    <ul class="service-features">
+                        <li>Cloud Migration Services</li>
+                        <li>Serverless Architecture</li>
+                        <li>Container Orchestration</li>
+                        <li>Cloud Security</li>
+                        <li>DevOps Implementation</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Choose Plan</a>
                 </div>
 
-                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pricing-header">
-                        <h3>Professional</h3>
-                        <div class="price">
-                            <span class="currency">₹</span>
-                            <span class="amount">9,999</span>
-                            <span class="period">/project</span>
-                        </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Custom Website Design</li>
-                        <li><i class="fas fa-check"></i> 10 Pages</li>
-                        <li><i class="fas fa-check"></i> E-commerce Features</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO</li>
-                        <li><i class="fas fa-check"></i> 6 Months Support</li>
+                    <h3>Data Analytics</h3>
+                    <p>Transform raw data into actionable insights with advanced analytics, visualization, and business intelligence solutions.</p>
+                    <ul class="service-features">
+                        <li>Business Intelligence</li>
+                        <li>Data Visualization</li>
+                        <li>Real-time Analytics</li>
+                        <li>Data Pipeline Development</li>
+                        <li>Custom Dashboards</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Choose Plan</a>
                 </div>
 
-                <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pricing-header">
-                        <h3>Premium</h3>
-                        <div class="price">
-                            <span class="currency">₹</span>
-                            <span class="amount">19,999</span>
-                            <span class="period">/project</span>
-                        </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Premium Design</li>
-                        <li><i class="fas fa-check"></i> Unlimited Pages</li>
-                        <li><i class="fas fa-check"></i> Full E-commerce</li>
-                        <li><i class="fas fa-check"></i> Advanced Analytics</li>
-                        <li><i class="fas fa-check"></i> 1 Year Support</li>
+                    <h3>Cybersecurity</h3>
+                    <p>Protect your digital assets with comprehensive security solutions, vulnerability assessments, and compliance management.</p>
+                    <ul class="service-features">
+                        <li>Security Audits</li>
+                        <li>Penetration Testing</li>
+                        <li>Compliance Management</li>
+                        <li>Security Training</li>
+                        <li>Incident Response</li>
                     </ul>
-                    <a href="#contact" class="cta-button">Choose Plan</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Recent Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-aos="fade-up">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 1">
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce Platform</h3>
-                        <p>Full-stack development with advanced features</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 2">
-                    <div class="portfolio-overlay">
-                        <h3>Data Analytics Dashboard</h3>
-                        <p>Real-time data visualization and reporting</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 3">
-                    <div class="portfolio-overlay">
-                        <h3>Mobile App Development</h3>
-                        <p>Cross-platform app with offline capabilities</p>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <p>We are a team of passionate developers and data scientists dedicated to delivering exceptional digital solutions. With over 10 years of experience, we've helped hundreds of businesses transform their digital presence and achieve their goals.</p>
-                <div class="skills">
-                    <h3>Our Expertise</h3>
-                    <div class="skill-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>Python</span>
-                        <span>Data Analysis</span>
-                        <span>Machine Learning</span>
-                        <span>UI/UX Design</span>
-                        <span>Cloud Computing</span>
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content" data-aos="fade-right">
+                <h2>Pioneering the Future of Technology</h2>
+                <p>At TechNova Solutions, we're not just building software – we're crafting the digital future. With over a decade of experience in cutting-edge technology, our team of expert developers, AI specialists, and cloud architects work tirelessly to transform your vision into reality.</p>
+                <p>We believe in the power of innovation to solve complex business challenges. Our agile approach ensures rapid delivery without compromising on quality, security, or scalability. From startups to enterprise corporations, we've helped businesses across industries achieve their digital transformation goals.</p>
+                <a href="#contact" class="btn-primary">Partner With Us</a>
+            </div>
+
+            <div class="expertise-grid" data-aos="fade-left">
+                <div class="expertise-item">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Innovation</h4>
+                    <span>Cutting-edge solutions</span>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Collaboration</h4>
+                    <span>Agile development</span>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-award"></i>
+                    <h4>Excellence</h4>
+                    <span>Quality assurance</span>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-clock"></i>
+                    <h4>Efficiency</h4>
+                    <span>Timely delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-subtitle">Our Work</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">Explore our portfolio of successful projects that showcase our expertise in delivering innovative solutions across various industries.</p>
+            </div>
+
+            <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="cloud">Cloud Solutions</button>
+            </div>
+
+            <div class="portfolio-grid" data-aos="fade-up" data-aos-delay="400">
+                <div class="portfolio-item" data-category="ai">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>AI-Powered Analytics Platform</h3>
+                        <p>Advanced machine learning platform for real-time business intelligence and predictive analytics.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Enterprise E-commerce Platform</h3>
+                        <p>Scalable e-commerce solution with advanced inventory management and multi-vendor support.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Healthcare Mobile App</h3>
+                        <p>HIPAA-compliant mobile application for patient management and telemedicine services.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">WebRTC</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="cloud">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Serverless Microservices Architecture</h3>
+                        <p>Cloud-native architecture with auto-scaling capabilities and zero-downtime deployments.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">API Gateway</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">CloudFormation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ai">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Computer Vision Quality Control</h3>
+                        <p>AI-powered quality control system for manufacturing with real-time defect detection.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Edge Computing</span>
+                            <span class="tech-tag">IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image"></div>
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Financial Trading Platform</h3>
+                        <p>High-frequency trading platform with real-time market data and advanced charting tools.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -232,21 +346,69 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-content">
-                <form id="contact-form" data-aos="fade-up">
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <h2>Let's Build Something Amazing Together</h2>
+                <p>Ready to transform your business with cutting-edge technology? Get in touch with our team of experts and let's discuss how we can bring your vision to life.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@technovasolutions.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>123 Tech Street, Innovation District<br>San Francisco, CA 94107</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
                     </div>
-                    <button type="submit" class="cta-button">Send Message</button>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="ai-ml">AI & Machine Learning</option>
+                            <option value="web-dev">Web Development</option>
+                            <option value="mobile-dev">Mobile Development</option>
+                            <option value="cloud">Cloud Solutions</option>
+                            <option value="data-analytics">Data Analytics</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="consultation">Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
@@ -254,48 +416,64 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>FreelancePro</h3>
-                    <p>Professional web development and data science services to help your business grow.</p>
+                    <h3>TechNova Solutions</h3>
+                    <p>Pioneering the future of technology with innovative software solutions, AI-powered applications, and cutting-edge digital transformation services.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>Services</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">AI & Machine Learning</a></li>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Mobile Development</a></li>
+                        <li><a href="#services">Cloud Solutions</a></li>
+                        <li><a href="#services">Data Analytics</a></li>
+                        <li><a href="#services">Cybersecurity</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
+                    <h3>Company</h3>
                     <ul>
-                        <li><a href="mailto:contact@freelancepro.com">contact@freelancepro.com</a></li>
-                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                        <li><a href="#">Startups</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 FreelancePro. All rights reserved.</p>
+                <p>&copy; 2024 TechNova Solutions. All rights reserved. | Transforming businesses through innovative technology.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
