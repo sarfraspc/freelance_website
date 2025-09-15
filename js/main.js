@@ -2,7 +2,7 @@
 const loadingScreen = document.getElementById('loading');
 const navbar = document.getElementById('navbar');
 const mobileMenu = document.getElementById('mobileMenu');
-// const navLinks = document.querySelector('.nav-links');
+const navLinks = document.getElementById('navLinks');
 const backToTop = document.getElementById('backToTop');
 const contactForm = document.getElementById('contactForm');
 
@@ -16,10 +16,12 @@ AOS.init({
 // Loading Screen
 window.addEventListener('load', () => {
     if (loadingScreen) {
-        loadingScreen.style.opacity = '0';
         setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 1500);
     }
 });
 
@@ -37,8 +39,18 @@ if (mobileMenu && navLinks) {
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenu.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 }
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
@@ -47,6 +59,7 @@ document.addEventListener('click', (e) => {
         !e.target.closest('.mobile-menu')) {
         navLinks.classList.remove('active');
         mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
     }
 });
 
@@ -60,11 +73,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
-            // Close mobile menu if open
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
         }
     });
 });
@@ -192,7 +200,7 @@ if (filterButtons.length > 0 && portfolioItems.length > 0) {
 
 // Active navigation link
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinksItems = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
     let current = '';
@@ -204,7 +212,7 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    navLinks.forEach(link => {
+    navLinksItems.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
@@ -212,56 +220,50 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Counter animation
-const counters = document.querySelectorAll('[data-count]');
-const animateCounters = () => {
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const current = parseInt(counter.textContent);
-        const increment = target / 100;
-        
-        if (current < target) {
-            counter.textContent = Math.ceil(current + increment);
-            setTimeout(animateCounters, 20);
-        }
+// Add input focus effects
+const formInputs = document.querySelectorAll('input, textarea, select');
+formInputs.forEach(input => {
+    input.addEventListener('focus', () => {
+        input.parentElement.classList.add('focused');
     });
-};
-
-// Trigger counter animation when hero section is visible
-const heroSection = document.querySelector('.hero');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            observer.unobserve(entry.target);
+    
+    input.addEventListener('blur', () => {
+        if (!input.value) {
+            input.parentElement.classList.remove('focused');
         }
     });
 });
-observer.observe(heroSection);
 
-// Add fadeIn animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+// Newsletter form submission
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        if (emailInput.value) {
+            console.log('Newsletter subscription:', emailInput.value);
+            emailInput.value = '';
+            alert('Thank you for subscribing to our newsletter!');
+        }
+    });
+}
+
+// Add hover effects to service cards
+const serviceCards = document.querySelectorAll('.service-card');
+serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+    });
     
-    .nav-links.active {
-        display: flex;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: rgba(15, 15, 35, 0.95);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 2rem;
-        border-bottom: 1px solid var(--glass-border);
-    }
-    
-    .mobile-menu.active i::before {
-        content: "\\f00d";
-    }
-`;
-document.head.appendChild(style);
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+    });
+});
+
+// Add animation to hero elements
+const heroContent = document.querySelector('.hero-content');
+if (heroContent) {
+    window.addEventListener('load', () => {
+        heroContent.classList.add('animate-in');
+    });
+}
